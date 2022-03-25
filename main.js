@@ -4,6 +4,8 @@ import * as THREE from 'three'
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
+import space from "./space.jpeg";
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerHeight/window.innerHeight, 0.1, 1000);
 
@@ -67,7 +69,7 @@ function addStar() {
 
 Array(200).fill().forEach(addStar);
 
-const spaceTexture = new THREE.TextureLoader().load("space.jpeg");
+const spaceTexture = new THREE.TextureLoader().load(space);
 scene.background = spaceTexture;
 
 function animate() {
@@ -87,3 +89,11 @@ function animate() {
 }
 
 animate();
+
+import audio from "./space.wav";
+document.querySelector("#btn").addEventListener("click", () => {
+  const au = new Audio(audio);
+  au.play();
+  document.querySelector("#btn").style.display = "none";
+  document.querySelector(".card").style.display = "block";
+})
