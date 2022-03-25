@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Made Adi Adnyana 3D Web</title>
+  </head>
+  <body>
+    <canvas id="bg"></canvas>
+    <main>
+      <div class="card">
+        <img src="foto.jpeg" alt="Fotoku">
+        <h1>Made Adi Adnyana</h1>
+        <span>2440042550</span>
+        <a href="https://www.linkedin.com/in/adiadnyana/">Link to my Linkedin</a>
+      </div>
+      <button id="btn">Click Me</button>
+    </main>
+    <script type="module" src="/main.js"></script>
+    <script>
+      const audio = new Audio("space.wav");
+      document.querySelector("#btn").addEventListener("click", () => {
+        audio.play();
+        document.querySelector("#btn").style.display = "none";
+        document.querySelector(".card").style.display = "block";
+      })
+    </script>
+  </body>
+</html>
